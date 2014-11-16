@@ -197,3 +197,5 @@ La balle peut sortir de l'écran. Pouvez-vous empêcher ce comportement ? Vous p
 Si vous voulez aller vraiment plus loin, essayer d'intégrer d'autre image, de vaisseau par exemple, mais qui bouge toutes seules. Ou encore, un fond étoilé pour donner une impression de mouvement dans l'espace.
 
 N'hésitez pas à nous présenter, ou à me présenter vos avancées et à me poser des questions.
+
+NDLR : Le code du jeu vidéo se trouve dans le fichier **main.py**
