@@ -1,6 +1,6 @@
 # Introduction
 
-** Un jeu vidéo **
+**Un jeu vidéo**
 
 Lors de la rencontre du 8 novembre 2014, nous avons commencé à nous intéresser aux projets. Moi, je propose un projet de jeu vidéo.
 Commençons d'abord à expliquer pourquoi programmer un jeu vidéo, ce n'est pas aussi simple que cela n'y parait et peut être même, nous pouvons dire que c'est l'un des genres les plus ardus de la programmation.
