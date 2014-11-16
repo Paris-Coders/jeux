@@ -41,7 +41,7 @@ jamais le jour, car ils voient bien plus grand que leur réelle capacité. Aprè
 un peu plus grand, lorsque l'on aura écarté les premières problématiques et que l'on se sentira à l'aise, mais il nous faut, 
 simplement, des problèmes à notre niveau, pour progresser.
 
-** Quel projet ? ** 
+**Quel projet ?** 
 
 Donc, durant la séance, nous avons décidé à travers des propositions et un vote, d'attaquer un genre de jeu vidéo, que nous allons réaliser au fil des prochaines séances.
 
@@ -61,7 +61,7 @@ J'ai immédiatement écarté certains jeux. Angry Birds demande d'avoir un moteu
 Les votants ont décidé de partir sur un Shoot em up. Rapide rappel du genre : c'est souvent un jeu où le jouer dirige un vaisseau, qui tire sur la horde d'aliens ou autre monstres arrivent (souvent du coté droit, ou haut de l'écran). C'est un peu comme un Space Invaders, mais en plus dynamique.
 
 
-** Pygame **
+**Pygame**
 
 Nous sommes en Python et pour réaliser notre jeu, nous allons utiliser Pygame. Voici un petit cours d'histoire dans le monde 
 de la création de jeux vidéo amateur.
@@ -87,7 +87,7 @@ Quelle introduction ! Maintenant, partons sur ce que nous faisons de mieux : du 
 
 Alors, certains n'ont pu assisté à mes séances précédentes. En réalité, ce n'est pas un soucis. Déjà car vous pouvez lire le compte rendu sur le Google Group mais, aussi, faire un jeu n'est pas si compliqué que cela et vous allez le découvrir dès maintenant.
 
-** Liens utiles **
+**Liens utiles**
 
 Commençons, par les liens utiles.
 
@@ -100,7 +100,7 @@ Sous Mac : c'est similaire à Windows, mais avec le fichier .dmg disponible sur 
 
 La documentation officielle sera notre principale source d'information et de compréhension du fonctionnement de la bibliothèque. On peut avoir un tutoriel sous le code, pour comprendre comment l'utiliser, mais généralement, il faut toujours se référer à la documentation officielle, même pendant la lecture d'un tutoriel.
 
-** Commençons ! **
+**Commençons !**
 
 Bon, Pygame, c'est un module. Pour pouvoir l'utiliser, il suffit de l'importer au tout début du programme :
 
@@ -153,7 +153,8 @@ Puis de l'afficher. Comme je le disais juste avant, l'image est maintenant en m�
     screen.blit(ball, ball.get_rect())
 
 Ici, on demande de blitter la ball, sur l'écran (screen). Pour la position (deuxième argument), on utilise le rectangle retourné par ball. Ce rectangle contiendra :
-[0, 0, largeur_de_l_image, hauteur_de_l_image]
+
+    [0, 0, largeur_de_l_image, hauteur_de_l_image]
 
 Donc, notre balle apparaitra en 0,0 (en haut à gauche de l'écran). Si on exécute ce code, rien ne s'affiche. En effet, la surface écran n'est pas envoyé à l'écran. Plus précisément, screen, c'est une surface en mémoire. Il faut donc demander précisément à Pygame de copier la surface sur l'écran :
 
@@ -188,7 +189,7 @@ En effet, Pygame propose une méthode pour récupérer le tableau des touches ap
 
 Simplement, ce tableau, renvoyé par pygame.key.get_pressed() a une taille équivalent au nombre de touche du clavier. Dès qu'une touche est appuyé, Pygame met True à la case correspondante à la touche. Ainsi, vous pouvez savoir quand est appuyé ou non, une touche.
 
-** Exercices supplémentaires **
+**Exercices supplémentaires**
 
 Vous avez une balle qui bouge, mais que dans une direction. Libre à vous de rajouter les autres directions.
 Moi, il m'embête de devoir utiliser la souris pour quitter l'application. J'aime bien quitter une application avec la touche échap (K_ESCAPE). Pouvez-vous faire en sorte que votre programme le fasse aussi ?
