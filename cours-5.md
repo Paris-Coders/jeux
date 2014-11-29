@@ -81,7 +81,7 @@ Il y a un second souci, c'est la vitesse de déplacement de la balle. Actuelleme
 ## Mise en place d'un compteur de FPS
 
 Pour mieux se rendre compte de ce phénomène, nous allons mettre un compteur de FPS (Image par Seconde). Comment ? Nous affichons une image à chaque passage de la boucle while. Donc, il nous suffit de rajouter un compteur, pour avoir le nombre d'image.
-Ensuite, le compteur de FPS est un compteur qui se base sur les secondes. Il suffit donc d'exécuter une action (affichage/réinitialisation du compteur) chaque seconde. Avec Pygame, vous pouvez obtenir le nombre de millisecondes depuis le début de l'exécution du programme : pygame.time.get_ticks(). Il suffit de vérifier si depuis le précédent affichage, il s'est passé une seconde. Voici le code :
+Ensuite, le compteur de FPS est un compteur qui se base sur les secondes. Il suffit donc d'exécuter une action (affichage/réinitialisation du compteur) chaque seconde. Avec Pygame, vous pouvez obtenir le nombre de millisecondes depuis le début de l'exécution du programme : `pygame.time.get_ticks()`. Il suffit de vérifier si depuis le précédent affichage, il s'est passé une seconde. Voici le code :
 
 ```python
 oldTime = 0
@@ -147,7 +147,7 @@ while 1:
 
 Lorsque le jeu fonctionne à 60 FPS, le deltaTime est de 16/17.
 Lorsque le jeu fonctionne à 30 FPS, le deltaTime est de 32/33.
-On donne le deltaTime à la fonction update() afin qu'elle puisse l'utiliser pour intégrer ce delta dans la vitesse de déplacement de la balle :
+On donne le deltaTime à la fonction `update()` afin qu'elle puisse l'utiliser pour intégrer ce delta dans la vitesse de déplacement de la balle :
 
 ```python
 def update(deltaTime):
@@ -168,7 +168,7 @@ Vous avez ainsi, un jeu, qui peu importe la vitesse du PC, fonctionnera toujours
 
 # Progression dans le Shoot'em'up
 
-Maintenant que nous avons une bonne base, du code propre et fiable, nous pouvons ajouter des éléments à notre jeu. Par exemple, il est très facile d'ajouter un enemi. Il suffit de rajouter le chargement d'un sprite dans la fonction loadData() et ajouter une ligne pour le copier, dans la fonction display().
+Maintenant que nous avons une bonne base, du code propre et fiable, nous pouvons ajouter des éléments à notre jeu. Par exemple, il est très facile d'ajouter un enemi. Il suffit de rajouter le chargement d'un sprite dans la fonction `loadData()` et ajouter une ligne pour le copier, dans la fonction `display()`.
 Certes, il ne bouge pas, mais au moins, notre vaisseau aura une cible pour tirer dessus.
 
 On remarque aussi, que chaque élément dans notre jeu à besoin de deux variables :
@@ -182,7 +182,7 @@ Tous les projectiles utilisent le même sprite. Donc il n'y a qu'une seule varia
 
 Dans la fonction `display()` : nous parcourons ce tableau avec une boucle for, pour afficher chaque projectile
 
-Si nous faisons ainsi, le projectile restera fixe à l'écran, ce n'est pas super pour un projectile. Du coup, dans la fonction update() nous pouvons rajouter un code pour le déplacer. À l'identique de la fonction display(), la fonction update() contiendra donc une boucle for pour parcourir tous les projectiles et les déplacer. Bien, nous les déplaçons, mais de une, ils sortent de l'écran, de deux, il traverse l'ennemi.
+Si nous faisons ainsi, le projectile restera fixe à l'écran, ce n'est pas super pour un projectile. Du coup, dans la fonction update() nous pouvons rajouter un code pour le déplacer. À l'identique de la fonction `display()`, la fonction `update()` contiendra donc une boucle for pour parcourir tous les projectiles et les déplacer. Bien, nous les déplaçons, mais de une, ils sortent de l'écran, de deux, il traverse l'ennemi.
 Pour le premier cas, on peut rajouter un simple test pour savoir si le projectile est sorti de l'écran. Dans un tel cas, alors, nous le supprimons.
 Pour le second cas, le test est de savoir si le projectile touche l'ennemi. Plus précisément, chaque objet dans notre jeu est compris dans un rectangle. Le rectangle contient la position (le point en haut à gauche) et la largeur et hauteur. Donc, pour savoir si le projectile touche l'ennemi, il faut savoir si le rectangle du projectile, touche celui de l'ennemi.
 Nous allons faire une fonction pour tester cette condition. La fonctionne accepte en paramètre deux éléments : les deux rectangles à tester.
@@ -191,7 +191,7 @@ Pour trouver quel sont les bons tests à faire, je vous conseille de prendre une
 
 Lorsque le projectile touche l'ennemi, il suffit de faire en sorte de ne plus afficher l'ennemi et de supprimer le projectile.
 
-Lorsque le joueur appuie sur la barre espace, un projectile est crée. Pour cela, il suffit de rajouter un élément dans la liste, les boucles présentes dans display() et update() gérerons le nouveau projectile sans difficultés.
+Lorsque le joueur appuie sur la barre espace, un projectile est crée. Pour cela, il suffit de rajouter un élément dans la liste, les boucles présentes dans `display()` et `update()` gérerons le nouveau projectile sans difficultés.
 
 
 # Exercices
@@ -200,5 +200,3 @@ Lorsque le joueur appuie sur la barre espace, un projectile est crée. Pour cela
         la détection de collision entre rectangle est classique en jeux vidéo. C'est un peu comme une roue :)
  * Vous pouvez faire en sorte que les ennemies bougent :)
  * N'hésitez pas à améliorer le code pour le rendre plus générique (gestion de plusieurs ennemis sans avoir énormément de variable ...)
-
-Et surtout, n'hésitez pas à demander de l'aide, à faire les exercice et à les montrer (soit à moi seul, soit à tous).

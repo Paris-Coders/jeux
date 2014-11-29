@@ -41,7 +41,7 @@ jamais le jour, car ils voient bien plus grand que leur réelle capacité. Aprè
 un peu plus grand, lorsque l'on aura écarté les premières problématiques et que l'on se sentira à l'aise, mais il nous faut, 
 simplement, des problèmes à notre niveau, pour progresser.
 
-**Quel projet ?** 
+## Quel projet ?
 
 Donc, durant la séance, nous avons décidé à travers des propositions et un vote, d'attaquer un genre de jeu vidéo, que nous allons réaliser au fil des prochaines séances.
 
@@ -61,7 +61,7 @@ J'ai immédiatement écarté certains jeux. Angry Birds demande d'avoir un moteu
 Les votants ont décidé de partir sur un Shoot em up. Rapide rappel du genre : c'est souvent un jeu où le jouer dirige un vaisseau, qui tire sur la horde d'aliens ou autre monstres arrivent (souvent du coté droit, ou haut de l'écran). C'est un peu comme un Space Invaders, mais en plus dynamique.
 
 
-**Pygame**
+## Pygame
 
 Nous sommes en Python et pour réaliser notre jeu, nous allons utiliser Pygame. Voici un petit cours d'histoire dans le monde 
 de la création de jeux vidéo amateur.
@@ -87,7 +87,7 @@ Quelle introduction ! Maintenant, partons sur ce que nous faisons de mieux : du 
 
 Alors, certains n'ont pu assisté à mes séances précédentes. En réalité, ce n'est pas un soucis. Déjà car vous pouvez lire le compte rendu sur le Google Group mais, aussi, faire un jeu n'est pas si compliqué que cela et vous allez le découvrir dès maintenant.
 
-**Liens utiles**
+## Liens utiles
 
 Commençons, par les liens utiles.
 
@@ -100,7 +100,7 @@ Sous Mac : c'est similaire à Windows, mais avec le fichier .dmg disponible sur 
 
 La documentation officielle sera notre principale source d'information et de compréhension du fonctionnement de la bibliothèque. On peut avoir un tutoriel sous le code, pour comprendre comment l'utiliser, mais généralement, il faut toujours se référer à la documentation officielle, même pendant la lecture d'un tutoriel.
 
-**Commençons !**
+## Commençons !
 
 Bon, Pygame, c'est un module. Pour pouvoir l'utiliser, il suffit de l'importer au tout début du programme :
 
@@ -108,13 +108,13 @@ Bon, Pygame, c'est un module. Pour pouvoir l'utiliser, il suffit de l'importer a
 
 Vous pouvez tester ainsi. Le programme ne fera rien de concret, mais, vous pourrez ainsi vérifier que Pygame est correctement installé sur votre machine. Si ce n'est pas le cas, vous aurez une erreur.
 
-Pour démarrer pygame, il faut appeler la fonction init() :
+Pour démarrer pygame, il faut appeler la fonction `init()` :
 
     pygame.init()
 
 Cela démarre Pygame, dans le sens où il va faire quelques préparations, initialisation en internet pour qu'il puisse fonctionnement correctement. Si vous l'oubliez, il y a de grandes chance que l'utilisation des autres fonctionnalités de Pygame vont planter.
 
-Dans un jeu, nous effectuons le rendu dans une fenêtre. Pour créer cette fenêtre, on utilise la fonction set_mode() :
+Dans un jeu, nous effectuons le rendu dans une fenêtre. Pour créer cette fenêtre, on utilise la fonction `set_mode()` :
 
     screen = pygame.display.set_mode((320,240))
 
@@ -162,14 +162,14 @@ Donc, notre balle apparaitra en 0,0 (en haut à gauche de l'écran). Si on exéc
 
 Ici, nous avons encore un héritage du monde de l'informatique. Flip(). Cela veut dire : retourner. En effet, les premiers ordinateur et console utilisait des écrans lents et surtout, l'affichage devait être synchronisée avec le balayage du tube cathodique. Si vous ne le faisiez pas, vous auriez des déchirures sur votre image et un effet un peu baveux. Mais, le fait d'envoyer une image à l'écran était lent. Donc, la technique était de préparée l'image à afficher, en mémoire (dans un tampon), puis, lorsque celle-ci est totalement prête, de demander à un composant matériel dédiée, de l'afficher. Ainsi, on peut l'afficher en attendant la synchronisation et surtout, sans devoir attendre que le CPU pose les éléments au fur et à mesure. Cette technique est appelée : Double Buffering. Du coup, c'est pour ça que l'on a toujours cette opération de : "affiche à l'écran ce que j'ai demandé".
 
-Bon, c'est pas mal. On a enfin une image à l'écran. Par contre, un jeu, cela doit réagir à l'utilisateur (et pas juste lorsque l'on ferme la fenêtre). Donc, nous allons revenir sur nos événements et chercher s'il y en a d'autres qui nous intéresse. Et oui, il y en a d'autres, de type KEYDOWN (appui sur une touche) et on peut même vérifier la touche appuyée :
+Bon, c'est pas mal. On a enfin une image à l'écran. Par contre, un jeu, cela doit réagir à l'utilisateur (et pas juste lorsque l'on ferme la fenêtre). Donc, nous allons revenir sur nos événements et chercher s'il y en a d'autres qui nous intéresse. Et oui, il y en a d'autres, de type `KEYDOWN` (appui sur une touche) et on peut même vérifier la touche appuyée :
 
     if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RIGHT:
                     ballrect.x+=1
 
 Ici, on doit créer une nouvelle variable "ballrect" pour garder la position de la balle que l'on déplace (que l'on modifie).
-Il faut savoir que la fonction blit() prend en argument un rectangle (cette fois, qui sera ballrect et non plus ball.get_rect()) car il est possible d'afficher des parties d'une image et non son intégralité. En effet, le rectangle contient une width (largeur) et une height (hauteur) en plus des x et y, permettant de définir la taille de l'image à copier (ou une taille inférieure, si besoin).
+Il faut savoir que la fonction `blit()` prend en argument un rectangle (cette fois, qui sera ballrect et non plus `ball.get_rect()`) car il est possible d'afficher des parties d'une image et non son intégralité. En effet, le rectangle contient une width (largeur) et une height (hauteur) en plus des x et y, permettant de définir la taille de l'image à copier (ou une taille inférieure, si besoin).
 
 Si vous déplacez la balle, vous verrez un effet crade. La balle précédemment affichée reste et la balle affichée à la nouvelle position, l'est par dessus. C'est normal. Notre écran (ou notre surface écran) agit comme une ardoise magique. Chaque fois que vous voulez afficher/dessiner une nouvelle chose il faut effacer le dessin précédent. C'est aussi comme dans un dessin animé, chaque fois, le dessin précédent est effacé. Pour ce faire :
 
@@ -180,16 +180,16 @@ Littéralement, on remplit notre écran d'une couleur (ici, le noir).
 On a fait un bon morceau de chemin. On a une balle qui bouge (dans une direction, mais c'est à vous de le faire pour les autres :)).
 Par contre, là, c'est ennuyeux, il faut appuyer plusieurs fois sur la touche, pour la déplacer. Généralement, les jeux ne se joue pas ainsi. Pour déplacer le personnage, on laisse le doigt appuyé. Faisons le dans notre jeu aussi !
 
-Il faut savoir, qu'il y a un événement lorsque l'utilisateur appuie sur une touche. Mais aussi, il y en a un lorsque l'utilisateur relache une touche (KEYUP). On pourrait faire un super truc, avec des booléans, qui devient True, lorsque l'on reçoit le KEYDOWN et False lorsque l'on reçoit le KEYUP. Après, il suffit de faire un test sur le boolean pour savoir s'il est nécessaire de déplacer le personnage. Oui, c'est une solution qui fonctionne. Par contre, le jour où vous devez gérer 25 touches, il vous faudra 25 boolean (ou un tableau) et le code qui va avec. Nous sommes légèrement fainéants et surtout, il y a mieux : Pygame fait tout ça pour nous.
+Il faut savoir, qu'il y a un événement lorsque l'utilisateur appuie sur une touche. Mais aussi, il y en a un lorsque l'utilisateur relache une touche (KEYUP). On pourrait faire un super truc, avec des booléans, qui devient True, lorsque l'on reçoit le KEYDOWN et False lorsque l'on reçoit le `KEYUP`. Après, il suffit de faire un test sur le boolean pour savoir s'il est nécessaire de déplacer le personnage. Oui, c'est une solution qui fonctionne. Par contre, le jour où vous devez gérer 25 touches, il vous faudra 25 boolean (ou un tableau) et le code qui va avec. Nous sommes légèrement fainéants et surtout, il y a mieux : Pygame fait tout ça pour nous.
 En effet, Pygame propose une méthode pour récupérer le tableau des touches appuyées ou non :
 
     keysState = pygame.key.get_pressed()
         if keysState[pygame.K_RIGHT]:
             ballrect.x+=1
 
-Simplement, ce tableau, renvoyé par pygame.key.get_pressed() a une taille équivalent au nombre de touche du clavier. Dès qu'une touche est appuyé, Pygame met True à la case correspondante à la touche. Ainsi, vous pouvez savoir quand est appuyé ou non, une touche.
+Simplement, ce tableau, renvoyé par `pygame.key.get_pressed()` a une taille équivalent au nombre de touche du clavier. Dès qu'une touche est appuyé, Pygame met True à la case correspondante à la touche. Ainsi, vous pouvez savoir quand est appuyé ou non, une touche.
 
-**Exercices supplémentaires**
+# Exercices supplémentaires
 
 Vous avez une balle qui bouge, mais que dans une direction. Libre à vous de rajouter les autres directions.
 Moi, il m'embête de devoir utiliser la souris pour quitter l'application. J'aime bien quitter une application avec la touche échap (K_ESCAPE). Pouvez-vous faire en sorte que votre programme le fasse aussi ?
@@ -198,4 +198,4 @@ Si vous voulez aller vraiment plus loin, essayer d'intégrer d'autre image, de v
 
 N'hésitez pas à nous présenter, ou à me présenter vos avancées et à me poser des questions.
 
-NDLR : Le code du jeu vidéo se trouve dans le fichier **main.py**
+Vous pouvez récupérer le code source final de ce cours ici : [main.py](https://github.com/Paris-Coders/jeux/blob/master/src/4/main.py)
