@@ -1,6 +1,6 @@
 # Introduction
 
-**Un jeu vidéo**
+## Un jeu vidéo
 
 Lors de la rencontre du 8 novembre 2014, nous avons commencé à nous intéresser aux projets. Moi, je propose un projet de jeu vidéo.
 Commençons d'abord à expliquer pourquoi programmer un jeu vidéo, ce n'est pas aussi simple que cela n'y parait et peut être même, nous pouvons dire que c'est l'un des genres les plus ardus de la programmation.
@@ -180,7 +180,7 @@ Littéralement, on remplit notre écran d'une couleur (ici, le noir).
 On a fait un bon morceau de chemin. On a une balle qui bouge (dans une direction, mais c'est à vous de le faire pour les autres :)).
 Par contre, là, c'est ennuyeux, il faut appuyer plusieurs fois sur la touche, pour la déplacer. Généralement, les jeux ne se joue pas ainsi. Pour déplacer le personnage, on laisse le doigt appuyé. Faisons le dans notre jeu aussi !
 
-Il faut savoir, qu'il y a un événement lorsque l'utilisateur appuie sur une touche. Mais aussi, il y en a un lorsque l'utilisateur relache une touche (KEYUP). On pourrait faire un super truc, avec des booléans, qui devient True, lorsque l'on reçoit le KEYDOWN et False lorsque l'on reçoit le `KEYUP`. Après, il suffit de faire un test sur le boolean pour savoir s'il est nécessaire de déplacer le personnage. Oui, c'est une solution qui fonctionne. Par contre, le jour où vous devez gérer 25 touches, il vous faudra 25 boolean (ou un tableau) et le code qui va avec. Nous sommes légèrement fainéants et surtout, il y a mieux : Pygame fait tout ça pour nous.
+Il faut savoir, qu'il y a un événement lorsque l'utilisateur appuie sur une touche. Mais aussi, il y en a un lorsque l'utilisateur relache une touche (`KEYUP`). On pourrait faire un super truc, avec des booléans, qui devient True, lorsque l'on reçoit le `KEYDOWN` et False lorsque l'on reçoit le `KEYUP`. Après, il suffit de faire un test sur le boolean pour savoir s'il est nécessaire de déplacer le personnage. Oui, c'est une solution qui fonctionne. Par contre, le jour où vous devez gérer 25 touches, il vous faudra 25 boolean (ou un tableau) et le code qui va avec. Nous sommes légèrement fainéants et surtout, il y a mieux : Pygame fait tout ça pour nous.
 En effet, Pygame propose une méthode pour récupérer le tableau des touches appuyées ou non :
 
     keysState = pygame.key.get_pressed()
@@ -192,7 +192,7 @@ Simplement, ce tableau, renvoyé par `pygame.key.get_pressed()` a une taille éq
 # Exercices supplémentaires
 
 Vous avez une balle qui bouge, mais que dans une direction. Libre à vous de rajouter les autres directions.
-Moi, il m'embête de devoir utiliser la souris pour quitter l'application. J'aime bien quitter une application avec la touche échap (K_ESCAPE). Pouvez-vous faire en sorte que votre programme le fasse aussi ?
+Moi, il m'embête de devoir utiliser la souris pour quitter l'application. J'aime bien quitter une application avec la touche échap (`K_ESCAPE`). Pouvez-vous faire en sorte que votre programme le fasse aussi ?
 La balle peut sortir de l'écran. Pouvez-vous empêcher ce comportement ? Vous pouvez récupérer la taille de l'écran avec les fonctions proposées ici : http://www.pygame.org/docs/ref/surface.html
 Si vous voulez aller vraiment plus loin, essayer d'intégrer d'autre image, de vaisseau par exemple, mais qui bouge toutes seules. Ou encore, un fond étoilé pour donner une impression de mouvement dans l'espace.
 
