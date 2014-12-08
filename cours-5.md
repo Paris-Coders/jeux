@@ -1,7 +1,7 @@
 # Introduction
 
 Ce cours sur les jeux vidéo fait directement suite au [précédent cours](https://github.com/Paris-Coders/jeux/blob/master/cours-4.md).
-De plus, pour ce cours, je vous ai préparé un petit pack de ressources afin de ne pas perdre de temps à chercher et modifier des sprites pour notre jeu. Vous pouvez le télécharger ici : https://1fichier.com/?vd6cx71psj. J'ai récupéré les images grâce à la liste des sites de ressources disponible ici : http://jeux.developpez.com/medias/.
+De plus, pour ce cours, je vous ai préparé un petit pack de ressources afin de ne pas perdre de temps à chercher et modifier des sprites pour notre jeu. Vous pouvez le télécharger ici : https://1fichier.com/?vd6cx71psj ou ici : http://alexandre-laurent.developpez.com/ressources/shoot/SpritePack.zip. J'ai récupéré les images grâce à la liste des sites de ressources disponible ici : http://jeux.developpez.com/medias/.
 Ce nouveau cours a parcouru les points suivants :
  * ré-organisation du code ;
  * ralentissement de la boucle de jeu ;
