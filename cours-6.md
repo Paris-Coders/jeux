@@ -151,7 +151,7 @@ Il n'y a rien d'autre à faire (bien que l'on pourra lire la documentation pour 
 
 Pour les musiques, c'est la même chose. Par contre, il est conseillé d'utiliser les formats MP3 et OGG. En effet, un fichier WAV de trois minutes risque de prendre 30 Mo sur le disque dur. Les formats MP3 ou OGG sont donc plus appropriés. Les WAV seront utilisés pour les sons cours, les bruitages.
 
-Le texte
+# Le texte
 
 Pour finaliser notre jeu, nous aimerions afficher le score du joueur. Encore une fois, pygame facilite cela. De même que pour le son, il faut initialiser un autre composant :
 ```python
