@@ -15,6 +15,7 @@ Donc, dans ce cours, nous allons voir :
 
 Actuellement, dans notre jeu, les projectiles touchent bien l'ennemi, mais cela ne suffit pas à donner une bonne impression au joueur. En effet, le projectile et l'ennemi disparaissent mais de façon immédiate. Le mieux serait donc d'afficher une explosion, pour bien montrer la raison de la disparition du vaisseau ennemi. Une explosion dure quelque temps. De plus, celle-ci est animée, dans le sens, ce n'est pas juste un sprite que l'on va afficher à une certaine position, mais un sprite qui "évolue".
 Pour cela, on va utiliser une nouvelle ressource, qui est aussi un fichier image, mais que l'on appelle spritesheet (feuille de sprites). Voici la notre :
+
 ![explosion](http://alexandre-laurent.developpez.com/ressources/shoot/explosion.png)
 
 On voit bien que c'est une image. Celle-ci est composé de 25 "sous images", que l'on appelle sprite. Pour que l'animation soit jolie et réussie, il faut afficher les images, les une après les autre. C'est la même chose qu'un dessin animé, ou encore, [un flipbook](https://www.youtube.com/watch?v=IehWY6JFjWo). Bien entendu, il ne faut pas afficher l'image complète, mais une sous partie de celle-ci. Nous avons de la chance (enfin, c'est normal, le concepteur de la bibliothèque pygame connaît les besoins que nous avons), la fonction [pygame.surface.blit()](http://www.pygame.org/docs/ref/surface.html#pygame.Surface.blit) possède un troisième argument (optionnel) que nous avions ignoré jusqu'à présent. Ce troisième argument, appelé area, permet d'indiquer le rectangle de l'image source, que nous voulons copier. Ainsi, nous pourrons afficher qu'une sous partie de notre spritesheet.
@@ -39,6 +40,7 @@ def explosionUpdate(deltaTime):
 
 Voyons ce que nous avons en source et ce que nous voulons comme résultat.
 
+```
 Étape   -> position du coin haut gauche
 0          -> (0,0)
 1          -> (64,0)
@@ -47,9 +49,11 @@ Voyons ce que nous avons en source et ce que nous voulons comme résultat.
 4          -> (256,0)
 5          -> (0,64)
 6          -> (64,64)
+```
 
 Et ainsi de suite. Ok, nous savons que la taille des sprites fait 64x64. Du coup, nous pouvons diviser les coordonnées de notre point haut gauche par 64, ce qui donne :
 
+```
 Étape   -> position du coin haut gauche   ->  Indice dans la grille
 0          -> (0,0)                                      -> (0,0)
 1          -> (64,0)                                    -> (1,0)
@@ -58,9 +62,11 @@ Et ainsi de suite. Ok, nous savons que la taille des sprites fait 64x64. Du coup
 4          -> (256,0)                                  -> (4,0)
 5          -> (0,64)                                    -> (0,1)
 6          -> (64,64)                                  -> (1,1)
+```
 
 C'est pas mal. Par rapport aux indices, on commence à voir un certain "motif". Par exemple, pour l'indice des Y, nous voyons que cela ressemble étrangement à ce que fait une division.
 
+```
 0 -> 0
 1 -> 0
 2 -> 0
@@ -73,9 +79,11 @@ C'est pas mal. Par rapport aux indices, on commence à voir un certain "motif". 
 11 -> 2
 12 -> 2
 ...
+```
 
 Et, aussi logiquement que vous pouvions le concevoir, cette division est une division par 5, le nombre d'images que nous avons par ligne.
 Pour les coordonnées en X, c'est un principe très identique :
+```
 0 -> 0
 1 -> 1
 2 -> 2
@@ -88,6 +96,7 @@ Pour les coordonnées en X, c'est un principe très identique :
 11 -> 1
 12 -> 2
 ...
+```
 
 C'est toujours lié à 5. On voit d'ailleurs que le résultat ne dépasse jamais 5. En informatique, un outil qui permet de restreindre une séquence de cette façon, c'est le modulo (%). En effet, ici, le résultat, c'est toujours le reste de la division par 5. 5, encore une fois, car c'est le nombre d'image que nous avons par ligne.
 
