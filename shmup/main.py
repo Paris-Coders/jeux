@@ -3,13 +3,13 @@
 
 # Importations
 import sys
-# Ne pas oublier d'importe pygame, non ?
+# [TODO] Ne pas oublier d'importe pygame, non ?
 
 # Importation de notre propre code
 import game
 
 
-# initialisation de pygame
+# [TODO] initialisation de pygame
 
 # On lance le jeu
 game.run()
