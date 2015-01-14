@@ -1,12 +1,22 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+from entity import *
 
 # Ce sont des dictionnaires, afin de retrouver un sprite (ou un son) à partir de son nom
 spriteData = {}
 soundsData = {}
 
-# Liste d'Entity
-entities = []
+# Listes d'Entity
+player = Entity()
+enemies = []
+# On peut aussi ajouter des bonus, qui sont d'autres entités, encore
+
+""" 
+Plusieurs techniques existe pour gérer les entité. Vous pouvez par exemple
+dire que la toute première entité du jeu est le joueur (une entité dont les x/y
+sont controllés à l'aide du clavier)
+"""
+
 
 def loadData():
 	"""Charge les données du jeu"""
@@ -26,8 +36,9 @@ def render(screen):
 	# [TODO] Efface l'écran avec une couleur (souvent noir) (pygame)
 	
 	# Affiche tous les éléments du jeu
-	for elem in entities:
-		# [TODO] Affiche un élément.
+	# [TODO] Affiche joueur
+	for enemy in enemies:
+		print "TODO affiche enemy"
 	
 	# [TODO] Affiche le jeu à l'écran (aussi appeler flip) (pygame)
 
@@ -37,6 +48,13 @@ def update(deltaTime):
 	Paramètres:
 	deltaTime - le temps entre deux update (souvent 16ms)
 	"""
+	
+	# [TODO] Récupérer les interactions clavier pour déplacer le joueur
+	
+	# [TODO] Déplacer les éléments du jeu
+	for enemy in enemies:
+		# Déplacer les enemies (vers la gauche, par exemple)
+		print "TODO update enemy"
 
 def run():
 	"""
