@@ -10,7 +10,6 @@ class Entity:
 	avec ses valeurs (passés en paramètres, ou par défaut)
 	"""
 
-		
 	def __init__(self, sprite=None, x=0, y=0):
 		sprite = sprite
 		x = x

@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from entity import *
+from explosion import *
 
 # Ce sont des dictionnaires, afin de retrouver un sprite (ou un son) à partir de son nom
 spriteData = {}
@@ -10,6 +11,8 @@ soundsData = {}
 player = Entity()
 enemies = []
 # On peut aussi ajouter des bonus, qui sont d'autres entités, encore
+
+explosions = []
 
 """ 
 Plusieurs techniques existe pour gérer les entité. Vous pouvez par exemple
@@ -39,7 +42,10 @@ def render(screen):
 	# [TODO] Affiche joueur
 	for enemy in enemies:
 		print "TODO affiche enemy"
-	
+		
+	# [TODO] Afficher explosions
+	for explosion in explosions:
+		print "TODO affiche explosion"
 	# [TODO] Affiche le jeu à l'écran (aussi appeler flip) (pygame)
 
 def update(deltaTime):
@@ -55,6 +61,10 @@ def update(deltaTime):
 	for enemy in enemies:
 		# Déplacer les enemies (vers la gauche, par exemple)
 		print "TODO update enemy"
+		
+	for explosion in explosions:
+		updateExplosion(deltaTime,explosion)
+		# Suivant le code de retour, il faut enlever l'explosion de la liste
 
 def run():
 	"""
