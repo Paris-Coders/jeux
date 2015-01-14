@@ -14,14 +14,14 @@ class Explosion:
 	"""
 
 	def __init__(self, sprite=None, x=0, y=0):
-		sprite = sprite
-		x = x
-		y = y
-		counter=0
+		self.sprite = sprite
+		self.x = x
+		self.y = y
+		self.counter=0
 		
 		# Valeurs pour l'affichage
-		imageX = 0
-		imageY = 0
+		self.imageX = 0
+		self.imageY = 0
 		
 
 def updateExplosion(deltaTime, explosion):

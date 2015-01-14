@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from entity import *
 from explosion import *
+from bullet import *
 
 # Ce sont des dictionnaires, afin de retrouver un sprite (ou un son) à partir de son nom
 spriteData = {}
@@ -10,6 +11,7 @@ soundsData = {}
 # Listes d'Entity
 player = Entity()
 enemies = []
+bullets = []
 # On peut aussi ajouter des bonus, qui sont d'autres entités, encore
 
 explosions = []
@@ -40,8 +42,9 @@ def render(screen):
 	
 	# Affiche tous les éléments du jeu
 	# [TODO] Affiche joueur
-	for enemy in enemies:
-		print "TODO affiche enemy"
+	for listEntities in enemies,bullets:
+		for entity in listEntities:
+			print "TODO affiche enemy/bullet"
 		
 	# [TODO] Afficher explosions
 	for explosion in explosions:
@@ -55,16 +58,28 @@ def update(deltaTime):
 	deltaTime - le temps entre deux update (souvent 16ms)
 	"""
 	
-	# [TODO] Récupérer les interactions clavier pour déplacer le joueur
+	# [TODO] Récupérer les interactions clavier pour déplacer le joueur/tirer des bullets
 	
 	# [TODO] Déplacer les éléments du jeu
 	for enemy in enemies:
-		# Déplacer les enemies (vers la gauche, par exemple)
+		# [TODO] Déplacer les enemies (vers la gauche, par exemple)
 		print "TODO update enemy"
+		
+	for bullet in bullets:
+		# [TODO] Déplacer les projectiles en utilisant leur dx/dy
+		print "TODO update projectiles"
 		
 	for explosion in explosions:
 		updateExplosion(deltaTime,explosion)
-		# Suivant le code de retour, il faut enlever l'explosion de la liste
+		# [TODO] Suivant le code de retour, il faut enlever l'explosion de la liste
+		
+	# [TODO] Gérer les collisions.
+	for bullet in bullets:
+		# [TODO] Test de collision avec le joueur. Vous pouvez coder le test à la main, ou alors ... :)
+		print "Test collision"
+		# [TODO] Suivant les collisions, on doit agir différement (suppression ennemi, ou game over)
+		for enemy in enemies:
+			print "Test collision bullet/enemy"
 
 def run():
 	"""
