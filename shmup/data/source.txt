@@ -1,0 +1,8 @@
+player.png - http://opengameart.org/content/spaceships-1
+enemy1.png - http://opengameart.org/content/shmup-ships
+enemy2.png - http://opengameart.org/content/shmup-ships
+enemy3.png - http://opengameart.org/content/spaceships-from-parts-part2artcom
+enemy4.png - http://opengameart.org/content/spaceships-from-parts-part2artcom
+bullet1.png - http://opengameart.org/content/bullet-collection-1-m484
+bullet2.png - http://opengameart.org/content/bullet-collection-1-m484
+explosion.png - http://opengameart.org/content/bomb-explosion-animation
