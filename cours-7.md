@@ -33,27 +33,37 @@ Depuis, Git est devenu très populaire dans la communauté Open Source et même 
 Nous allons partir d'un projet déjà existant (le code source à trou pour le jeu de shoot em up).
 Pour copier un projet existant, il faut le copier (ou plus précisément, le cloner) à partir du serveur :
 
+```
    git clone git@github.com:Paris-Coders/jeux.git
+```
 
 Ensuite, pour chaque étape de votre projet, vous pouvez créer un commit (chaque commit, doit être une modification du code, dans le sens, un ajout de fonctionnalité, ou une étape du projet).
 Pour ajouter des fichiers à être commiter, il faut utiliser `git add`, sinon il sera ignoré.
 
+```
    git add monNouveauFichier
+```
 
 (Vous pouvez aussi supprimer des fichiers avec `git rm`).   
 Ensuite, vous pouvez faire un commit :
 
+```
    git commit
-   
+```
+
 Le logiciel vous demandera un message, message qui sert à expliquer au reste de l'équipe ce que vous avez fait lors de ce commit. Il est aussi utile pour vous repérer dans l'évolution du projet, dans le cas où vous avez ajouté un bogue.
    
 Vous pouvez faire autant de commit que vous le souhaitez, sans jamais les envoyer au serveur. Ce n'est pas un souci en soit, mais le mieux est d'envoyer une copie du projet assez souvent (à la fin d'une journée) pour le sauvegarder. Pour cela, vous allez faire un push :
 
+```
    git push
-   
+```
+
 Si vous travaillez avec une autre personne, vous pouvez récupérer la dernière version présente sur le serveur avec un `pull` :
 
+```
    git pull
+```
    
 Voilà les bases de Git.   
 
@@ -89,7 +99,9 @@ Tout ce que propose le site est documenté : https://help.github.com/
 
 Je vous propose un code source à trou, pour le projet de shoot em up. Vous pouvez le forker sur GitHub ici : https://github.com/Paris-Coders/jeux/tree/master/shmup ou le cloner :
 
+```
    git clone git@github.com:Paris-Coders/jeux.git
+```
 
 Le code est complètement documenté. Il n'introduit absolument aucune nouveauté par rapport aux cours que j'ai donnés. Je pense qu'il faudra environ 10h de travail pour faire le jeu (en lisant les cours).
 Pour faire le projet, il suffit de lire les commentaires et de remplacer les lignes avec `[TODO]` par le code approprié.
