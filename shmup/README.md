@@ -23,6 +23,7 @@ Et voilà, vous avez un jeu fonctionnel.
 # Conseils
 
 N'hésitez pas à supprimer les commentaires avec [TODO] une fois que vous les avez implémentés.
+Certaines images sont bien trop grandes. Vous pouvez toujours les redimensionner avec votre logiciel de retouche d'images préféré.
 
 # Bonus
 
