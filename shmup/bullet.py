@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Python m'oblige à faire une classe dans un tel cas (pour contenir plusieurs éléments dans un objet).
-class Entity:
+class Bullet:
 	"""
 	Une bullet est proche de l'entité. Elle contient un sprite, une position
 	mais aussi une direction (dx/dy).
