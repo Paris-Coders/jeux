@@ -34,7 +34,7 @@ Du côté de la programmation, la machine à état n'est pas très compliquée. 
 		afficher_menu()
 ```
 
-# la 2D, avec trois dimensions
+# La 2D, avec trois dimensions
 
 En réalité, les jeux 2D utilisent une troisième dimension. Certes, elle n'est pas visible, le jeu est bien en 2D, mais les composants du jeu auront bien trois coordonnées : x, y et z.
 Cette troisième coordonnées permet de déterminer l'ordre d'affichage des sprites. En effet, si vous affichez deux sprites ayant la même taille à la même position, le sprite visible sera le second sprite dessiné (comme pour la peinture). Ainsi, il est nécessaire dessiner le fond (l'arrière plan) en premier, puis les éléments du jeu (les personnages) par la suite. Si vous ne le faites pas dans cet ordre, vous n'allez voir que l'arrière plan.
