@@ -49,9 +49,9 @@ Jusqu'à présent, nous n'avions qu'une boucle de dessin de ce genre :
 Cela ne suffit plus. On pourrait mettre en place une solution avec deux boucles :
 
 ```python
-	for element in liste_elements:
-		for profondeur in liste_des_couches
-			if profondeur == element.z
+	for profondeur in liste_des_couches:
+		for element in liste_elements:
+			if profondeur == element.z:
 				afficher(element)
 ```
 
@@ -64,11 +64,11 @@ Notre code sera donc :
 
 ```python
 	tri(liste_elements)
-		for element in liste_elements:
-			afficher(element)
+	for element in liste_elements:
+		afficher(element)
 ```
 
-Voilà, c'est fini. Le soucis est réglé. Sachez qu'en informatique, le tri d'un tableau est un problème archi classique et qu'il a été résolu de très nombreuses fois, avec différents algorithmes efficaces. D'ailleurs, Python en propose un, optimisé, prêt à l'utilisation.
+Voilà, c'est fini. Le soucis est réglé. Sachez qu'en informatique, le tri d'un tableau est un problème archi classique et qu'il a été résolu de très nombreuses fois, avec différents algorithmes efficaces. D'ailleurs, Python en propose un, optimisé, prêt à l'utilisation. En Python, la fonction toute prête pour effectuer le tri est `sort()` (ou `sorted()`). Comme toujours, référez vous à la [documentaiton officielle](https://docs.python.org/2/howto/sorting.html) pour plus d'informations.
 Vous pouvez me dire : on tri le tableau à chaque affichage, cela va prendre un temps fou. D'une part, le tri est optimisé et aura beaucoup de chance de prendre moins de temps que la situation précédente, mais nous avons un second avantage : les algorithmes de tri (du moins, les grands classiques), pour un tableau trié, ne "perdent pas de temps" (juste un parcours du tableau sans plus).
 Donc oui, le tri est la vraie solution pour ce cas là. En informatique pour certains problèmes, il arrive que l'on gagne beaucoup de temps de traitement, en commençant par trier les données, puis en faisant les vrais calculs/opérations que l'on souhaitait faire sur les données.
 
