@@ -5,7 +5,7 @@ Voici le plan de ce nouveau cours :
 
  * les machines à états ;
  * la 2D, avec trois dimensions ? ;
- * un nouveau jeu ?
+ * l'évolution des shoot em up.
  
 # Les machines à états
 
@@ -56,7 +56,7 @@ Cela ne suffit plus. On pourrait mettre en place une solution avec deux boucles 
 ```
 
 Mais cette solution à deux limitations :
-* elle nécessite d'avoir la liste des couches (savoir combien de coordonnées z ont été utilisée). Alors oui, on peut demander à l'ordinateur de trouver cela pour nous, en parcourant ... nos objets (oui, encore une fois) ;
+* elle nécessite d'avoir la liste des couches (savoir combien de coordonnées z ont été utilisées). Alors oui, on peut demander à l'ordinateur de trouver cela pour nous, en parcourant ... nos objets (oui, encore une fois) ;
 * il y a deux boucles for, imbriquées. Cela veut dire, que l'on parcourt tous nos éléments autant de fois qu'il y a de couche. Si j'ai mille éléments et huit couches composés d'un unique élément alors, je vais faire énormément de calculs (8000) pour afficher que huit éléments. C'est inneficace.
 
 Il existe une solution qui, au premier abord, parait comme moins efficace : on va trier la liste des éléments selon leur coordonnée z. Ainsi, tous les éléments ayant la coordonnées z 0 seront au début de notre tableau et donc, affichés en premier. Puis viendront les éléments de la couche 1 et ainsi de suite.
