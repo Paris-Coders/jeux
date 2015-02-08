@@ -73,3 +73,18 @@ Vous pouvez me dire : on tri le tableau à chaque affichage, cela va prendre un 
 Donc oui, le tri est la vraie solution pour ce cas là. En informatique pour certains problèmes, il arrive que l'on gagne beaucoup de temps de traitement, en commençant par trier les données, puis en faisant les vrais calculs/opérations que l'on souhaitait faire sur les données.
 
 
+# Évolution des shoot em up
+
+Maintenant que nous savons faire un shoot em up, il est intéressant de 
+voir ce qui s'est fait au cours des quarantes dernières années. En 
+effet, même si tout le monde a en tête les classiques Space Invaders, 
+Asteroids ou encore Gradius ou R-Type, certains genre sont bien moins 
+connus en Europe.
+Ce documentaire réalisé par Game One explore les différents types de 
+gameplay constituant le genre :
+* https://www.youtube.com/watch?v=3AHhkq7p3Qw
+* https://www.youtube.com/watch?v=Fv7fCr6QFis
+* https://www.youtube.com/watch?v=B-qFAtkCcIk
+
+N'hésitez donc à vous inspirer de ces gameplays et style pour faire 
+votre propre jeu.
