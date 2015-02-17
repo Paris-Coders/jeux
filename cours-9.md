@@ -5,6 +5,7 @@ Vous avez tous les éléments pour concevoir le jeu et le finaliser. Toutefois, 
 vous avez appris la base et l'architecture d'un jeu vidéo, il nous reste quelques techniques
 et procédés à découvrir. Dans cette leçon, nous allons nous pencher sur le système de tuile, notamment
 utilisé dans les jeux 2D comme Zelda.
+
 En seconde partie, nous allons aussi voir la récursivité, un procédé en informatique, permettant
 de résoudre des problèmes spécifiques de manière rapide et efficace là où l'utilisation des boucles for
 n'arrive pas à répondre au besoin.
@@ -20,6 +21,7 @@ Pour rappel, ce jeu fonctionne sur Super Nintendo. Aujourd'hui, nous allons parl
 de la carte (l'arrière plan) où se déplace le joueur. Une méthode naïve (très naïve)
 serait de dire : on stocke sur le disque dur une image du monde et lors de l'affichage
 nous copions un morceau de cette image.
+
 Certes, cela fonctionne. Malheureusement, une image du monde complet de The Legend of Zelda: A Link to the past (sans les donjons)
 fait plus de 2 Mo et cela, au format PNG (un format compressé). La mémoire vive de la console ne fait que
 128 Ko. Cela va être très dur de travailler avec une si grande image.
@@ -89,6 +91,7 @@ Pour cela, il nous faudra un peu de mathématiques. Regardons ce qui se passe :
 * Les coordonnées 1,1 correspondent à la case 4
 * ...
 * Les coordonnées 2,2 correspondent à la case 8
+
 Dans les variables disponibles, nous avons : x et y, la largeur (3) et la hauteur (3) du tableau. Pour les trois premières cases `x` donne directement le résultat.
 Mais dès que l'on passe sur la seconde ligne, on obtient 3 et après, pour la case 4, on à 3+1. On pourrait continuer comme cela longtemps. D'ailleurs
 une autre case intéressente à vérifier, c'est la case 6 qui correspond aux coordonnées 0,2. La formule que nous pouvons en déduire est : `x + y * largeur_du_tableau`
@@ -111,6 +114,7 @@ ne permette pas de résoudre une problématique. Par contre, le même problème 
 Pour faire une récursivité efficace (sans bogue/crash), il faut se rappeler de deux règles :
 * une fonction récursive est une fonction qui s'appelle elle même ;
 * la récurisivité doit avoir une condition d'arrêt.
+
 En effet, le code que j'ai montré ci-dessus ne va jamais s'arrêter. C'est une boucle infinie (sans boucle) où `foo()` va toujours
 se rappeler. En réalité, en informatique, chaque appel de fonction coute un peu de mémoire (qui est libérée à la fin de la fonction appelée). Le fait
 de faire une fonction récursive comme `foo()` fait qu'à chaque appel, un peu plus de mémoire est utilisée et comme on n'en sort jamais,
