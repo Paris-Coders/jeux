@@ -13,7 +13,8 @@ n'arrive pas à répondre au besoin.
 # Un système de tuiles (TileMapping)
 
 Prenons une image du jeu : The Legend of Zelda: A link to the past.
-!(http://alexandre-laurent.developpez.com/ressources/zelda-link-to-the-past.jpg)
+
+![](http://alexandre-laurent.developpez.com/ressources/zelda-link-to-the-past.jpg)
 
 Pour rappel, ce jeu fonctionne sur Super Nintendo. Aujourd'hui, nous allons parler
 de la carte (l'arrière plan) où se déplace le joueur. Une méthode naïve (très naïve)
@@ -138,7 +139,7 @@ La fonction récursive devra colorier la case présente et colorier les cases ad
 
 ## Exercices
 
-Ceci est votre exercice. J'ai placé un [code de base ici](https://github.com/Paris-Coders/jeux/tree/master/exo/recursivity}, dans lequel le clic sur la fenêtre appelle la fonction fillGrid du fichier filler.py.
+Ceci est votre exercice. J'ai placé un [code de base ici](https://github.com/Paris-Coders/jeux/tree/master/exo/recursivity), dans lequel le clic sur la fenêtre appelle la fonction fillGrid du fichier filler.py.
 Celle-ci est notre fonction récursive. Trouvez le code pour faire en sorte que cela colorie que les cases autour de celle où vous avez cliqué, indiquant les cases à une distance adéquate, de votre clic.
 
 Un second exercice serait de s'intéresser [aux fractales](https://fr.wikipedia.org/wiki/Fractales). La plus simple à mettre en place est : la [courbe de von Koch](https://fr.wikipedia.org/wiki/Flocon_de_von_Koch).
