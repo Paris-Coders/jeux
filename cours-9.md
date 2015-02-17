@@ -13,7 +13,7 @@ n'arrive pas à répondre au besoin.
 # Un système de tuiles (TileMapping)
 
 Prenons une image du jeu : The Legend of Zelda: A link to the past.
-![http://alexandre-laurent.developpez.com/ressources/zelda-link-to-the-past.jpg]
+!(http://alexandre-laurent.developpez.com/ressources/zelda-link-to-the-past.jpg)
 
 Pour rappel, ce jeu fonctionne sur Super Nintendo. Aujourd'hui, nous allons parler
 de la carte (l'arrière plan) où se déplace le joueur. Une méthode naïve (très naïve)
@@ -115,7 +115,7 @@ se rappeler. En réalité, en informatique, chaque appel de fonction coute un pe
 de faire une fonction récursive comme `foo()` fait qu'à chaque appel, un peu plus de mémoire est utilisée et comme on n'en sort jamais,
 celle-ci n'est jamais libérée. Au bout d'un moment, la mémoire est pleine et votre programme crashe.
 
-L'exemple le plus simple en récursivité est : la [https://fr.wikipedia.org/wiki/Factorielle](factorielle).
+L'exemple le plus simple en récursivité est : la [factorielle](https://fr.wikipedia.org/wiki/Factorielle).
 Celle-ci se code très facilement :
 ```python
 	def fact(n):
@@ -138,7 +138,7 @@ La fonction récursive devra colorier la case présente et colorier les cases ad
 
 ## Exercices
 
-Ceci est votre exercice. J'ai placé un code de base ici, dans lequel le clic sur la fenêtre appelle la fonction fillGrid du fichier filler.py.
+Ceci est votre exercice. J'ai placé un [code de base ici](https://github.com/Paris-Coders/jeux/tree/master/exo/recursivity}, dans lequel le clic sur la fenêtre appelle la fonction fillGrid du fichier filler.py.
 Celle-ci est notre fonction récursive. Trouvez le code pour faire en sorte que cela colorie que les cases autour de celle où vous avez cliqué, indiquant les cases à une distance adéquate, de votre clic.
 
-Un second exercice serait de s'intéresser [https://fr.wikipedia.org/wiki/Fractales](aux fractales). La plus simple à mettre en place est : la [https://fr.wikipedia.org/wiki/Flocon_de_von_Koch](courbe de von Koch).
+Un second exercice serait de s'intéresser [aux fractales](https://fr.wikipedia.org/wiki/Fractales). La plus simple à mettre en place est : la [courbe de von Koch](https://fr.wikipedia.org/wiki/Flocon_de_von_Koch).
